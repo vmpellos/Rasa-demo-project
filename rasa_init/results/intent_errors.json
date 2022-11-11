@@ -1,0 +1,74 @@
+[
+  {
+    "text": "Χαίρεται",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.7970561385154724
+    }
+  },
+  {
+    "text": "γεια",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9999911785125732
+    }
+  },
+  {
+    "text": "Γειά σου",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9999843835830688
+    }
+  },
+  {
+    "text": "Καλημέρα",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9973289966583252
+    }
+  },
+  {
+    "text": "Καλησπέρα",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.882014811038971
+    }
+  },
+  {
+    "text": "πάμε",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7074046730995178
+    }
+  },
+  {
+    "text": "Γεια σου φίλε",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9999829530715942
+    }
+  },
+  {
+    "text": "καλό απόγευμα",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9928720593452454
+    }
+  },
+  {
+    "text": "γεια, τι κάνεις;",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8730210661888123
+    }
+  }
+]
