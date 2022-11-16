@@ -1,0 +1,163 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Χαίρεται
+    - γεια
+    - Γειά σου
+    - Καλημέρα
+    - Καλησπέρα
+    - πάμε
+    - Γεια σου φίλε
+    - καλό απόγευμα
+    - γεια, τι κάνεις;
+
+
+- intent: goodbye
+  examples: |
+    - τα λέμε
+    - μιλάμε 
+    - μιλάμε μετά
+    - τα λέμε μετά
+    - αντίο
+    - τα ξαναλέμε
+    - καλό βράδυ
+    - καλή συνέχεια
+
+- intent: affirm
+  examples: |
+    - ναι
+    - φυσικά
+    - όντως
+    - εννοείται
+    - σίγουρα
+    - σωστά
+    - συμφωνώ
+
+- intent: deny
+  examples: |
+    - όχι
+    - με τίποτα
+    - ποτέ
+    - δε νομίζω
+    - δε μου αρέσει
+    - δε συμφωνώ
+    - διαφωνώ
+    - είμαι αρνητικός
+
+- intent: mood_great
+  examples: |
+    - τέλεια
+    - ωραία
+    - φανταστικά
+    - νιώθω όμορφα
+    - εξαιρετικά
+    - είμαι καλά
+    - αισθάνομαι τέλεια
+    - περνάω φανταστικά
+    - είμαι στα καλύτερα μου
+    - είμαι τέλεια
+    - εξαιρετικά καλά
+    - περνάω απίστευτα
+
+- intent: mood_unhappy
+  examples: |
+    - είχα δύσκολη μέρα
+    - δεν είμαι καλά
+    - νιώθω χάλια
+    - είμαι απογοητευμένος
+    - είχα άσχημη μέρα
+    - είμαι λυπημένος
+    - δεν είμαι χαρούμενος
+    - δε περνάω καλά
+    - πολύ άσχημα
+    - είμαι χάλια
+    - δεν αισθάνομαι καλά
+    - έχω υπάρξει και καλύτερα
+    - όχι τόσο καλά
+
+- intent: bot_challenge
+  examples: |
+    - είσαι ρομπότ;
+    - είσαι άνθρωπος;
+    - μιλάω με ρομπότ;
+    - μιλάω με άνθρωπο;
+
+- intent: give_time
+  examples: |
+    - τι ώρα είναι?
+    - έχεις ώρα?
+    - μπορείς να μου πεις λίγο την ώρα;
+
+
+- intent: request_name
+  examples: |
+    - πώς σε λένε?
+    - ποιο είναι το ονομά σου?
+    - πως ονομάζεσαι?
+
+- intent: remember
+  examples: |
+    - με θυμάσαι?
+    - ξέρεις το όνομα μου?
+    - θυμάσαι το όνομα μου?
+    - γνωρίζεις το άνομά μου?
+
+
+- intent: query_knowledge_base
+  examples: |
+    - what [restaurants]{"entity": "object_type", "value": "restaurant"} can you recommend?
+    - list some [restaurants]{"entity": "object_type", "value": "restaurant"}
+    - can you name some [restaurants]{"entity": "object_type", "value": "restaurant"} please?
+    - can you show me some [restaurant]{"entity": "object_type", "value": "restaurant"} options
+    - list [German]{"entity": "cuisine"} [restaurants]{"entity": "object_type", "value": "restaurant"}
+    - do you have any [mexican]{"entity": "cuisine"} [restaurants]{"entity": "object_type", "value": "restaurant"}?
+    - do you know the [price range]{"entity": "attribute", "value": "price-range"} of [that one]{"entity": "mention"}?
+    - what [cuisine]{"entity": "attribute"} is [it]{"entity": "mention"}?
+    - do you know what [cuisine]{"entity": "attribute"} the [last one]{"entity": "mention", "value": "LAST"} has?
+    - does [Donath]{"entity": "restaurant"} have [outside seating]{"entity": "attribute", "value": "outside-seating"}?
+    - what is the [price range]{"entity": "attribute", "value": "price-range"} of [Berlin Burrito Company]{"entity": "restaurant"}?
+    - what is with [I due forni]{"entity": "restaurant"}?
+    - Do you also have any [Vietnamese]{"entity": "cuisine"} [restaurants]{"entity": "object_type", "value": "restaurant"}?
+    - What about any [Mexican]{"entity": "cuisine", "value": "mexican"} [restaurants]{"entity": "object_type", "value": "restaurant"}?
+    - Do you also know some [Italian]{"entity": "cuisine"} [restaurants]{"entity": "object_type", "value": "restaurant"}?
+    - can you tell me the [price range]{"entity": "attribute", "value": "price-range"} of [that restaurant]{"entity": "mention"}?
+    - what [cuisine]{"entity": "attribute"} do [they]{"entity": "mention"} have?
+    - what [hotels]{"entity": "object_type", "value": "hotel"} can you recommend?
+    - please list some [hotels]{"entity": "object_type", "value": "hotel"} in [Frankfurt am Main]{"entity": "city"} for me
+    - what [hotels]{"entity": "object_type", "value": "hotel"} do you know in [Berlin]{"entity": "city"}?
+    - name some [hotels]{"entity": "object_type", "value": "hotel"} in [Berlin]{"entity": "city"}
+    - show me some [hotels]{"entity": "object_type", "value": "hotel"}
+    - what are [hotels]{"entity": "object_type", "value": "hotel"} in [Berlin]{"entity": "city"}
+    - does the [last]{"entity": "mention", "value": "LAST"} one offer [breakfast]{"entity": "attribute", "value": "breakfast-included"}?
+    - does the [second one]{"entity": "mention", "value": "2"} [include breakfast]{"entity": "attribute", "value": "breakfast-included"}?
+    - what is the [price range]{"entity": "attribute", "value": "price-range"} of the [second]{"entity": "mention", "value": "2"} hotel?
+    - does the [first]{"entity": "mention", "value": "1"} one have [wifi]{"entity": "attribute", "value": "free-wifi"}?
+    - does the [third]{"entity": "mention", "value": "3"} one have a [swimming pool]{"entity": "attribute", "value": "swimming-pool"}?
+    - what is the [star rating]{"entity": "attribute", "value": "star-rating"} of [Berlin Wall Hostel]{"entity": "hotel"}?
+    - Does the [Hilton]{"entity": "hotel"} have a [swimming pool]{"entity": "attribute", "value": "swimming-pool"}?
+
+
+
+- intent: music
+  examples: |
+    - Θα ήθελα να ακούσω λίγη μουσική.
+    - θέλω να ακούσω μουσική?
+    - Μπορείς να μου προτείνεις μουσική?
+    - έχω όρεξη να ακούσω μουσική
+
+- intent: rock
+  examples: |
+    - [ροκ] {"entity": "type_of_music"}
+    - [ροκ] ν ρολ {"entity": "type_of_music"}
+    - σκληρό [ροκ] {"entity": "type_of_music"}
+    - [μέταλ] {"entity": "type_of_music"}
+
+- intent: rap
+  examples: |
+    - [ραπ] {"entity": "type_of_music"}
+    - [χιπ χοπ] {"entity": "type_of_music"}
+    - [τραπ] {"entity": "type_of_music"}
+    - [ποπ] {"entity": "type_of_music"}
+

@@ -1,0 +1,87 @@
+version: "3.1"
+
+stories:
+
+- story: welcome
+  steps:
+  - intent: greet
+  - action: utter_greet
+  
+
+- story: happy path 1
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+
+- story: sad path 1
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+
+- story: sad path 2
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: names
+  steps:
+  - intent: request_name
+  - action: utter_request_name
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: vincent
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: vincent-mcvincent
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+
+
+- story: greet and then query knowledge base
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: query_knowledge_base
+  - action: action_query_knowledge_base
+
+
+- story: Play Music
+  steps:
+  - intent: music
+  - action: action_music
+  
+
+- story: Rock 
+  steps:
+  - intent: rock
+    entities:
+      - type_of_music: "hard_rock_heavy"
+  - slot_was_set:
+      - type_of_music: "hard_rock_heavy"
+  - action: utter_hard_rock_heavy
+
+
+- story: Rap
+  steps:
+  - intent: rap
+    entities:
+      - type_of_music: "rap_trap_pop"
+  - slot_was_set:
+      - type_of_music: "rap_trap_pop"
+  - action: utter_rap_trap_pop
